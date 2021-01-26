@@ -6,6 +6,8 @@ tags=Array.new
 numberOfVms=4
 vmMemory=2048
 
+rm -rf ~/.ansible/cp && mkdir ~/.ansible/cp
+
 sshKey="#{Dir.home}/.ssh/id_rsa.pub"
 
 Vagrant.configure("2") do |config|
