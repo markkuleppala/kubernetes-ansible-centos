@@ -13,7 +13,7 @@ sshKey="#{Dir.home}/.ssh/id_rsa.pub"
 Vagrant.configure("2") do |config|
   (1..numberOfVms).each do |i|
     config.vm.define "node#{i}" do |host|
-      host.vm.box = "centos/7"
+      host.vm.box = "centos/8"
       host.vm.hostname = "node#{i}"
       host.vm.network "private_network", ip: "192.168.120.1#{i}"
       config.vm.provision "shell" do |s|
