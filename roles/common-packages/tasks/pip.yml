@@ -6,7 +6,6 @@
     - libselinux-python
     - libsemanage-python
     - policycoreutils-python
-    - python-pip
     - python38-pip
 
 - name: remove pip docker
