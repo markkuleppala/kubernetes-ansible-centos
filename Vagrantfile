@@ -23,7 +23,7 @@ Vagrant.configure("2") do |config|
           mkdir /root/.ssh && chmod 700 /root/.ssh
           touch /root/.ssh/authorized_keys && chmod 600 /root/.ssh/authorized_keys
           echo #{ssh_pub_key} >> /root/.ssh/authorized_keys
-          yum install -y python38 --silent
+          yum install -y python38 -q
         SHELL
       end
       config.vm.provision "shell" do |s|
