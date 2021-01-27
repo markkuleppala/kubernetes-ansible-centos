@@ -7,7 +7,7 @@
 
 - set_fact:
     cluster: "{{ cluster|default([]) + [ 'etcd-' + hostvars[item].hostname + '=http://' + hostvars[item].net_internal_ip + ':' + etcd_peer_port | string ] }}"
-  with_items: "{{ groups['master-nodes'] }}"
+  with_items: "{{ groups['master_nodes'] }}"
 
 - set_fact:
     data_dir: "/etcd-data"
