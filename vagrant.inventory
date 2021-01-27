@@ -7,7 +7,7 @@ node4 ansible_host=192.168.120.14
 [vagrant:vars]
 ansible_python_interpreter=/usr/bin/python
 
-[all-servers:children]
+[all_servers:children]
 vagrant
 
 [admin_tasks]
