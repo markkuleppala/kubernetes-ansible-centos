@@ -13,6 +13,6 @@ networking:
 etcd:
     external:
         endpoints:
-{% for host in groups['master-nodes'] %}
+{% for host in groups['master_nodes'] %}
         - http://{{ hostvars[host].net_internal_ip }}:{{ etcd_client_port }}
 {% endfor %}
