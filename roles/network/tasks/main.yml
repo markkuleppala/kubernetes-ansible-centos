@@ -20,11 +20,11 @@
 
 - set_fact:
     firewalld_ports: "{{ master_node_ports }}"
-  when: "'master-nodes' in group_names"
+  when: "'master_nodes' in group_names"
 
 - set_fact:
     firewalld_ports: "{{ worker_node_ports }}"
-  when: "'worker-nodes' in group_names"
+  when: "'worker_nodes' in group_names"
 
 - name: Allow Network Ports in Firewalld
   firewalld:
