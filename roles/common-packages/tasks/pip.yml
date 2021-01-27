@@ -15,7 +15,7 @@
     state: absent
 
 - name: pip packages
-  pip: name={{ item.name }} state=present
+  pip: name={{ item.name }} state=latest
   with_items:
     - name: setuptools
       #version: 42.0.2
