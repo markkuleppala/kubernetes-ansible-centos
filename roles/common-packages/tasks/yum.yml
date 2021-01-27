@@ -10,6 +10,11 @@
     src: "kubernetes.repo.j2"
     dest: "/etc/yum.repos.d/kubernetes.repo"
 
+- name: Install python38
+  yum:
+    name: python38
+    state: latest
+
 - yum: name=yum state=latest
 
 - name: install epel-release
