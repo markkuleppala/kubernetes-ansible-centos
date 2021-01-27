@@ -7,7 +7,7 @@
     - libsemanage-python
     - policycoreutils-python
     - python-pip
-    - python36-pip
+    - python38-pip
 
 - name: remove pip docker
   pip:
