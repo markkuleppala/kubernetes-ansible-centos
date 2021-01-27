@@ -22,7 +22,7 @@ node3
 node4
 
 [haproxy:children]
-all-servers
+all_servers
 
 [etcd:children]
-master-nodes
+master_nodes
