@@ -1,5 +1,5 @@
 ---
-- hosts: all-servers
+- hosts: all_servers
   roles:
     - name: common-packages
       tags: [base, common-packages]
@@ -26,19 +26,19 @@
     - name: kubernetes
       tags: [base, kubernetes]
 
-- hosts: master-nodes
+- hosts: master_nodes
   serial: 1
   roles:
     - name: kubernetes-master
       tags: [kubernetes, kubernetes-master]
 
-- hosts: worker-nodes
+- hosts: worker_nodes
   serial: 1
   roles:
     - name: kubernetes-worker
       tags: [kubernetes, kubernetes-worker]
 
-- hosts: admin-tasks
+- hosts: admin_tasks
   roles:
     - name: kubernetes-dashboard
       tags: [kubernetes, kubernetes-dashboard]
