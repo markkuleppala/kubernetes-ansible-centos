@@ -4,7 +4,6 @@
   with_items:
    - libselinux-python
    - libsemanage-python
-   - python38
   
 - name: Reload ansible_facts
   setup:
