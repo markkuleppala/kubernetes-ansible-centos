@@ -1,5 +1,14 @@
 ---
-
+- name: Install python bindings for SE Linux
+  yum: name={{ item }} state=present
+  with_items:
+   - libselinux-python
+   - libsemanage-python
+   - python38
+  
+- name: Reload ansible_facts
+  setup:
+  
 - name: add /etc/yum.repos.d/docker.repo
   template:
     src: "docker.repo.j2"
@@ -9,11 +18,6 @@
   template:
     src: "kubernetes.repo.j2"
     dest: "/etc/yum.repos.d/kubernetes.repo"
-
-- name: Install python38
-  yum:
-    name: python38
-    state: latest
 
 - yum: name=yum state=latest
 
