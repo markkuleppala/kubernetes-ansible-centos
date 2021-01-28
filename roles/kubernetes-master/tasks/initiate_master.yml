@@ -1,9 +1,9 @@
 ---
-- debug:
-    msg:
-      - "Kubernetes master has not been initialised yet"
-      - "Initializing now..."
-  when: cluster_health.rc != 0
+#- debug:
+#    msg:
+#      - "Kubernetes master has not been initialised yet"
+#      - "Initializing now..."
+#  when: cluster_health.rc != 0
 
 - name: Initializing Kubernetes cluster
   shell: |
