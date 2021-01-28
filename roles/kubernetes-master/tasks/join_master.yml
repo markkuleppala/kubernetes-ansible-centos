@@ -14,4 +14,4 @@
 - name: Copying token to worker nodes
   copy: src={{ kubeadm_join_token_path }} dest={{ kubernetes_host_dir }}/conf/kubeadm_join_token
   notify: join master replica node
-  when: (kubeadm_join_token_path) | is_file
+  when: (kubeadm_join_token_path) is file
