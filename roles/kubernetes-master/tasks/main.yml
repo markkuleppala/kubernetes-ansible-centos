@@ -14,10 +14,10 @@
   template: src=templates/kubeadm-config.yml.j2 dest="{{ kubernetes_host_dir }}/conf/kubeadm-config.yml"
   when: inventory_hostname == groups["master_nodes"][0]
 
-- name: Checking if kubernetes control pane is running
-  shell: kubectl get cs
-  register: cluster_health
-  ignore_errors: yes
+#- name: Checking if kubernetes control pane is running
+#  shell: kubectl get cs
+#  register: cluster_health
+#  ignore_errors: yes
 
 - import_tasks: initiate_master.yml
   when: inventory_hostname == groups["master_nodes"][0]
