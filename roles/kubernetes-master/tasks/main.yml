@@ -37,7 +37,7 @@
   shell: |
    cp -f /etc/kubernetes/admin.conf $HOME/.kube/config
    chown $(id -u):$(id -g) $HOME/.kube/config
-  when: cluster_health.rc != 0
+  #when: cluster_health.rc != 0
 
 # TODO: OpenShift Python module error
 # - name: >-
