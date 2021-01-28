@@ -6,5 +6,5 @@
 - name: join master replica node
   shell: |
    kubeadm reset -f
-   KUBE_JOIN_CMD="`cat {{ kubernetes_host_dir }}/conf/kubeadm_join_token | grep -oPz 'kubeadm\sjoin(.|\n)*?\n$'` --apiserver-advertise-address={{ net_internal_ip }}"
-   bash -c "${KUBE_JOIN_CMD}"
+   KUBE_JOIN_CMD=$(cat /srv/services/kubernetes/conf/kubeadm_join_token | awk '/kubeadm join/,/--control/')
+   bash -c "${KUBE_JOIN_CMD} --apiserver-advertise-address={{ net_internal_ip }}"
