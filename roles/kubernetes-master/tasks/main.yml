@@ -27,11 +27,16 @@
 
 - meta: flush_handlers
 
+- name: Create a directory $HOME/.kube
+  ansible.builtin.file:
+    path: $HOME/.kube
+    state: directory
+    mode: '0755'
+
 - name: Copying required files
   shell: |
-   mkdir -p $HOME/.kube
-   cp -f /etc/kubernetes/admin.conf ~/.kube/config
-   chown $(id -u):$(id -g) ~/.kube/config
+   cp -f /etc/kubernetes/admin.conf $HOME/.kube/config
+   chown $(id -u):$(id -g) $HOME/.kube/config
   when: cluster_health.rc != 0
 
 # TODO: OpenShift Python module error
